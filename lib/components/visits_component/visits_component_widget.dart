@@ -1,10 +1,13 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'visits_component_model.dart';
 export 'visits_component_model.dart';
 
@@ -54,7 +57,7 @@ class _VisitsComponentWidgetState extends State<VisitsComponentWidget> {
       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Builder(
         builder: (context) {
-          final allVistors = widget.upcmingData!.toList();
+          final allVistors = widget!.upcmingData!.toList();
 
           return ListView.separated(
             padding: EdgeInsets.symmetric(vertical: 20.0),
@@ -84,7 +87,7 @@ class _VisitsComponentWidgetState extends State<VisitsComponentWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(12.0),
                     border: Border.all(
-                      color: widget.isUncoverd == true
+                      color: widget!.isUncoverd == true
                           ? FlutterFlowTheme.of(context).error
                           : FlutterFlowTheme.of(context).secondaryBackground,
                       width: 2.0,
@@ -135,7 +138,7 @@ class _VisitsComponentWidgetState extends State<VisitsComponentWidget> {
                                                         .fontStyle,
                                               ),
                                         ),
-                                        if (widget.isUncoverd == true)
+                                        if (widget!.isUncoverd == true)
                                           Container(
                                             decoration: BoxDecoration(
                                               color:

@@ -1,7 +1,10 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/components/visits_component/visits_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:power_sync_b0w5r9/components/power_sync_connectivity_widget.dart'
+    as power_sync_b0w5r9;
 import 'package:power_sync_b0w5r9/components/power_sync_query_widget.dart'
     as power_sync_b0w5r9;
 import 'package:power_sync_b0w5r9/flutter_flow/flutter_flow_util.dart'
@@ -10,6 +13,7 @@ import 'package:power_sync_b0w5r9/flutter_flow/flutter_flow_util.dart'
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'main_page_model.dart';
 export 'main_page_model.dart';
 
@@ -112,7 +116,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                         model: _model.powerSyncQueryModel1,
                         updateCallback: () => safeSetState(() {}),
                         child: power_sync_b0w5r9.PowerSyncQueryWidget(
-                          sql: 'SELECT *\nFROM visits',
+                          sql: 'SELECT * FROM visits;',
                           watch: true,
                           parameters: <String, dynamic>{
                             'assigned_carer_id': currentUserUid,
@@ -127,54 +131,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                       ),
                     ),
                     KeepAliveWidgetWrapper(
-                      builder: (context) => Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            currentUserUid,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                          ),
-                          Text(
-                            currentJwtToken,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                          ),
-                        ],
+                      builder: (context) =>
+                          power_sync_b0w5r9_util.wrapWithModel(
+                        model: _model.powerSyncConnectivityModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: power_sync_b0w5r9.PowerSyncConnectivityWidget(),
                       ),
                     ),
                     KeepAliveWidgetWrapper(

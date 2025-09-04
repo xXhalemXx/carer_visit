@@ -9,7 +9,10 @@ import 'auth/supabase_auth/supabase_user_provider.dart';
 import 'auth/supabase_auth/auth_util.dart';
 
 import '/backend/supabase/supabase.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'flutter_flow/nav/nav.dart';
+import 'index.dart';
 
 import 'package:power_sync_b0w5r9/app_state.dart'
     as power_sync_b0w5r9_app_state;
@@ -23,7 +26,7 @@ void main() async {
   usePathUrlStrategy();
 
   power_sync_b0w5r9_library_values.FFLibraryValues().PowerSyncUrl =
-      'https://68b963282dfde049b4c22346.powersync.journeyapps.com';
+      'https://68ba18a6b77e3ab86cf40cf1.powersync.journeyapps.com';
   power_sync_b0w5r9_library_values.FFLibraryValues().PowerSyncSchema =
       '{\"tables\":[{\"name\":\"visits\",\"view_name\":null,\"local_only\":false,\"insert_only\":false,\"columns\":[{\"name\":\"created_at\",\"type\":\"text\"},{\"name\":\"scheduled_at\",\"type\":\"text\"},{\"name\":\"visit_type\",\"type\":\"text\"},{\"name\":\"client_name\",\"type\":\"text\"},{\"name\":\"location\",\"type\":\"text\"},{\"name\":\"assigned_carer_id\",\"type\":\"text\"},{\"name\":\"status\",\"type\":\"text\"},{\"name\":\"completed_at\",\"type\":\"text\"}],\"indexes\":[]},{\"name\":\"visit_notes\",\"view_name\":null,\"local_only\":false,\"insert_only\":false,\"columns\":[{\"name\":\"visit_id\",\"type\":\"text\"},{\"name\":\"author_id\",\"type\":\"text\"},{\"name\":\"note_text\",\"type\":\"text\"},{\"name\":\"created_at\",\"type\":\"text\"},{\"name\":\"author_name\",\"type\":\"text\"}],\"indexes\":[]},{\"name\":\"attachments_queue\",\"view_name\":null,\"local_only\":true,\"insert_only\":false,\"columns\":[{\"name\":\"filename\",\"type\":\"text\"},{\"name\":\"local_uri\",\"type\":\"text\"},{\"name\":\"timestamp\",\"type\":\"integer\"},{\"name\":\"size\",\"type\":\"integer\"},{\"name\":\"media_type\",\"type\":\"text\"},{\"name\":\"state\",\"type\":\"integer\"}],\"indexes\":[]}]}';
 

@@ -20,3 +20,16 @@ List<VisitsRow> supabaseRowsToVistors(List<dynamic> supabaseRows) {
 List<VisitNotesRow>? supabaseRowsToNotes(List<dynamic> supabaseRows) {
   return supabaseRows.map((r) => VisitNotesRow(r)).toList();
 }
+
+String? testauth() {
+// Check Supabase authentication
+  final user = Supabase.instance.client.auth.currentUser;
+  print('=== FlutterFlow Auth Check ===');
+  print('User ID: ${user?.id}');
+  print('User Email: ${user?.email}');
+  print('User Role: ${user?.role}');
+  print('Session Valid: ${user != null}');
+  print(
+      'Access Token: ${Supabase.instance.client.auth.currentSession?.accessToken != null}');
+  return user?.id ?? '';
+}

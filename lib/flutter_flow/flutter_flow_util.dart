@@ -13,6 +13,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../main.dart';
 
+import 'package:ff_commons/flutter_flow/lat_lng.dart';
 
 export 'keep_alive_wrapper.dart';
 export 'package:ff_commons/flutter_flow/lat_lng.dart';

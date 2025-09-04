@@ -1,11 +1,20 @@
+import '/auth/supabase_auth/auth_util.dart';
+import '/components/visits_component/visits_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'main_page_widget.dart' show MainPageWidget;
+import 'package:power_sync_b0w5r9/components/power_sync_connectivity_widget.dart'
+    as power_sync_b0w5r9;
 import 'package:power_sync_b0w5r9/components/power_sync_query_widget.dart'
     as power_sync_b0w5r9;
 import 'package:power_sync_b0w5r9/flutter_flow/flutter_flow_util.dart'
     as power_sync_b0w5r9_util
     show wrapWithModel, createModel, FlutterFlowDynamicModels;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ///  State fields for stateful widgets in this page.
@@ -19,6 +28,8 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
 
   // Model for PowerSyncQuery component.
   late power_sync_b0w5r9.PowerSyncQueryModel powerSyncQueryModel1;
+  // Model for PowerSyncConnectivity component.
+  late power_sync_b0w5r9.PowerSyncConnectivityModel powerSyncConnectivityModel;
   // Model for PowerSyncQuery component.
   late power_sync_b0w5r9.PowerSyncQueryModel powerSyncQueryModel2;
 
@@ -26,6 +37,8 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   void initState(BuildContext context) {
     powerSyncQueryModel1 = power_sync_b0w5r9_util.createModel(
         context, () => power_sync_b0w5r9.PowerSyncQueryModel());
+    powerSyncConnectivityModel = power_sync_b0w5r9_util.createModel(
+        context, () => power_sync_b0w5r9.PowerSyncConnectivityModel());
     powerSyncQueryModel2 = power_sync_b0w5r9_util.createModel(
         context, () => power_sync_b0w5r9.PowerSyncQueryModel());
   }
@@ -34,6 +47,7 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   void dispose() {
     tabBarController?.dispose();
     powerSyncQueryModel1.dispose();
+    powerSyncConnectivityModel.dispose();
     powerSyncQueryModel2.dispose();
   }
 }

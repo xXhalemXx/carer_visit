@@ -4,6 +4,7 @@ import '/components/note_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:power_sync_b0w5r9/components/power_sync_query_widget.dart'
     as power_sync_b0w5r9;
@@ -15,6 +16,7 @@ import 'package:power_sync_b0w5r9/flutter_flow/flutter_flow_util.dart'
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'visit_details_model.dart';
 export 'visit_details_model.dart';
 
@@ -68,7 +70,7 @@ class _VisitDetailsWidgetState extends State<VisitDetailsWidget> {
             await power_sync_b0w5r9_actions.powersyncWrite(
               'INSERT INTO visit_notes (visit_id, author_id, note_text, author_name)VALUES   (:visit_id, :author_id, \'new note from flutter flow\', \'Samy Ahmed\');',
               <String, dynamic>{
-                'visit_id': widget.singleVisit?.id,
+                'visit_id': widget!.singleVisit?.id,
                 'author_id': currentUserUid,
               },
             );
@@ -191,7 +193,7 @@ class _VisitDetailsWidgetState extends State<VisitDetailsWidget> {
                                   children: [
                                     Text(
                                       valueOrDefault<String>(
-                                        widget.singleVisit?.clientName,
+                                        widget!.singleVisit?.clientName,
                                         'client_name',
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -214,7 +216,7 @@ class _VisitDetailsWidgetState extends State<VisitDetailsWidget> {
                                     ),
                                     Text(
                                       valueOrDefault<String>(
-                                        widget.singleVisit?.visitType,
+                                        widget!.singleVisit?.visitType,
                                         'visit_type',
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -256,7 +258,7 @@ class _VisitDetailsWidgetState extends State<VisitDetailsWidget> {
                                       12.0, 6.0, 12.0, 6.0),
                                   child: Text(
                                     valueOrDefault<String>(
-                                      widget.singleVisit?.status,
+                                      widget!.singleVisit?.status,
                                       'status',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -331,7 +333,7 @@ class _VisitDetailsWidgetState extends State<VisitDetailsWidget> {
                                           valueOrDefault<String>(
                                             dateTimeFormat(
                                                 "jms",
-                                                widget
+                                                widget!
                                                     .singleVisit?.scheduledAt),
                                             '11:03:34:AM',
                                           ),
@@ -408,7 +410,7 @@ class _VisitDetailsWidgetState extends State<VisitDetailsWidget> {
                                           valueOrDefault<String>(
                                             dateTimeFormat(
                                                 "yMd",
-                                                widget
+                                                widget!
                                                     .singleVisit?.scheduledAt),
                                             '9/4/2025',
                                           ),
@@ -483,7 +485,7 @@ class _VisitDetailsWidgetState extends State<VisitDetailsWidget> {
                                         ),
                                         Text(
                                           valueOrDefault<String>(
-                                            widget.singleVisit?.visitType,
+                                            widget!.singleVisit?.visitType,
                                             'visit_type',
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -557,7 +559,7 @@ class _VisitDetailsWidgetState extends State<VisitDetailsWidget> {
                                         ),
                                         Text(
                                           valueOrDefault<String>(
-                                            widget.singleVisit?.location,
+                                            widget!.singleVisit?.location,
                                             'location',
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -636,7 +638,7 @@ class _VisitDetailsWidgetState extends State<VisitDetailsWidget> {
                           sql: 'SELECT *\nFROM  visit_notes;',
                           watch: true,
                           parameters: <String, dynamic>{
-                            'visit_id': widget.singleVisit?.id,
+                            'visit_id': widget!.singleVisit?.id,
                           },
                           child: (List<dynamic> rows) => NoteWidget(
                             allNotes:

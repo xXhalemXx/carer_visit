@@ -1,8 +1,11 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'note_model.dart';
 export 'note_model.dart';
 
@@ -60,10 +63,10 @@ class _NoteWidgetState extends State<NoteWidget> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (widget.allNotes!.length > 0)
+            if (widget!.allNotes!.length > 0)
               Builder(
                 builder: (context) {
-                  final notes = widget.allNotes!.toList();
+                  final notes = widget!.allNotes!.toList();
 
                   return ListView.separated(
                     padding: EdgeInsets.zero,
@@ -247,7 +250,7 @@ class _NoteWidgetState extends State<NoteWidget> {
                   );
                 },
               ),
-            if (widget.allNotes!.length <= 0)
+            if (widget!.allNotes!.length <= 0)
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Text(
